@@ -8,7 +8,7 @@
 <style>
     .container{
         width: 200px;
-        border: 3px double #330a00;
+        border: 5px double #330a00;
         border-radius: 10px;
         display: block;
         margin: 20px auto;
@@ -20,22 +20,67 @@
         display: block;
         margin: 20px auto;
     }
+    .roll-btn{
+        display: block;
+        margin: 10px auto;
+        background-color: #1a0000;
+        color: white;
+        border-radius: 15px;
+        padding: 6px 15px;
+        border: none;
+        cursor: pointer;
+        margin-top: 25Px;
+        margin-bottom: 15px;
+    }
+    .heading{
+        text-align: center;
+        color: #1a0000;
+    }
 
 </style>
 <body>
     
     <div class="container">
-    <h1> Dice Roller </h1>
-    <img src="dice 1.png" alt="" class="img-dice"/>
-    <button>Roll the Dice</button>
+    <h1 class="heading"> Dice Roller </h1>
+    <img src="dice 1.png" alt="" class="img-dice" id="img-dice"/>
+    <button type="button" class="roll-btn" onclick="rollDice()">Roll the Dice</button>
     </div>
 
     <script>
-   const min = 1;
-   const max = 6;
+        function rollDice(){
+            const min = 1;
+            const max = 6;
 
-   const randomNumber = Math.round(Math.random() * (max-min)) + min;
-   console.log(randomNumber);
+        const randomNum = Math.round(Math.random() * (max-min)) + min;
+        
+        const diceImg = document.getElementById('img-dice');
+        
+        if(randomNum==1){
+            diceImg.src = 'dice1.png';
+
+        }
+        else if(randomNum==2){
+            diceImg.src = 'dice2.png';
+        }
+
+        else if(randomNum==3){
+            diceImg.src = 'dice3.png';
+        }
+
+        else if(randomNum==4){
+            diceImg.src = 'dice4.png';
+        }
+
+        else if(randomNum==5){
+            diceImg.src = 'dice5.png';
+        }
+
+        else if(randomNum==6){
+            diceImg.src = 'dice6.png';
+        }
+
+           
+        }
 
    </script> 
 </body>
